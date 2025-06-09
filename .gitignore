@@ -4,9 +4,10 @@
 # But not these files...
 !.gitignore
 !nvim/
-!template.latex
+!fish/
+!rofi/
 # etc...
 
 # ...even if they are in subdirectories
-!*/
+# !*/
 
