@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+
+dir="$HOME/.config/rofi/settings/launcher/"
+
+## Run
+rofi \
+    -show window \
+    -theme ${dir}/cozy.rasi
