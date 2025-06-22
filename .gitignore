@@ -3,9 +3,24 @@
 
 # But not these files...
 !.gitignore
+
 !nvim/
+!nvim/**
+
 !fish/
+!fish/** 
+
 !rofi/
+!rofi/** 
+
+!nitrogen/** 
+!nitrogen/** 
+ 
+ 
+!dwm/
+!dwm/** 
+ 
+
 # etc...
 
 # ...even if they are in subdirectories
