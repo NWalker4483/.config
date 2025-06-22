@@ -30,8 +30,23 @@ return {
       lazygit = { enabled = true },
       git = { enabled = true },
       gitbrowse = { enabled = true },
-      explorer = { enabled = true },
-      picker = { enabled = true },
+      
+      -- Explorer with enhanced configuration
+      explorer = { 
+        enabled = true,
+        -- Show hidden files (dotfiles)
+        show_hidden = true,
+        -- Auto-expand to current file
+        auto_expand = true,
+        -- Additional useful options
+        follow = true,  -- Follow the current file
+        win = {
+          width = 30,   -- Set explorer width
+          position = "left",
+        },
+      },
+      
+      picker = { enabled = true ,hidden=true, ignored=true},
       toggle = { enabled = true },
       scratch = { enabled = true },
       animate = { enabled = true },
@@ -52,7 +67,7 @@ return {
     keys = {
       -- File Management
       { "<leader>e", function() Snacks.explorer() end, desc = "Explorer" },
-      { "<leader>E", function() Snacks.explorer({ cwd = vim.fn.expand("%:p:h") }) end, desc = "Explorer (cwd)" },
+    --   { "<leader>E", function() Snacks.explorer({ cwd = vim.fn.expand("%:p:h") }) end, desc = "Explorer (cwd)" },
       
       -- Git Integration
       { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
@@ -72,17 +87,6 @@ return {
       { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent Files" },
       { "<leader>fc", function() Snacks.picker.commands() end, desc = "Commands" },
       { "<leader>fk", function() Snacks.picker.keymaps() end, desc = "Key Maps" },
-      
-      -- Toggle Features
-      { "<leader>uw", function() Snacks.toggle.option("wrap", { name = "Wrap" }) end, desc = "Toggle Wrap" },
-      { "<leader>ul", function() Snacks.toggle.option("relativenumber", { name = "Relative Number" }) end, desc = "Toggle Relative Number" },
-      { "<leader>un", function() Snacks.toggle.option("number", { name = "Line Numbers" }) end, desc = "Toggle Line Numbers" },
-      { "<leader>us", function() Snacks.toggle.option("spell", { name = "Spelling" }) end, desc = "Toggle Spelling" },
-      { "<leader>uh", function() Snacks.toggle.inlay_hints() end, desc = "Toggle Inlay Hints" },
-      
-      -- Scratch/Notes
-      { "<leader>.", function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
-      { "<leader>S", function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
       
       -- Words (references/navigation)
       { "]]", function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
@@ -147,14 +151,7 @@ return {
       { "<leader>g", group = "Git" },
       { "<leader>u", group = "UI Toggle" },
       { "<leader>t", group = "Tabs/Terminal" },
-      { "<leader>m", group = "Markview" },
-      { "<leader>c", group = "CSV" },
-      
-      -- CSV commands (available globally, work when in CSV files)
-      { "<leader>cv", "<cmd>CsvViewToggle<cr>", desc = "Toggle CSV View" },
-      { "<leader>ce", "<cmd>CsvViewEnable<cr>", desc = "Enable CSV View" },
-      { "<leader>cd", "<cmd>CsvViewDisable<cr>", desc = "Disable CSV View" },
-    },
+        },
   },
 
   -- Treesitter for syntax highlighting (separate plugin)
@@ -191,13 +188,13 @@ return {
     end,
   },
 
-  -- Optional: Icons support (separate plugin)
+  -- Optional: Icons support
   {
     "nvim-tree/nvim-web-devicons",
     lazy = true,
   },
   
-  -- Optional: which-key for better toggle descriptions (separate plugin)
+  -- Optional: which-key for toggle 
   {
     "folke/which-key.nvim",
     event = "VeryLazy",

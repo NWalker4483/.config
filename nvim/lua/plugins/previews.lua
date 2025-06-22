@@ -39,6 +39,12 @@ return {
     })
   end,
   ft = { "csv", "tsv" },
+  keys = {
+      -- CSV commands (available globally, work when in CSV files)
+   { "<leader>cv", "<cmd>CsvViewToggle<cr>", desc = "Toggle CSV View" },
+       { "<leader>ce", "<cmd>CsvViewEnable<cr>", desc = "Enable CSV View" },
+     { "<leader>cd", "<cmd>CsvViewDisable<cr>", desc = "Disable CSV View" },
+  },
   cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
 },
 
