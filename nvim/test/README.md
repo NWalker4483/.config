@@ -2,6 +2,10 @@
 
 Debrief is an intelligent project management assistant that integrates with your Obsidian vault, helping you maintain project documentation and track progress through natural speech updates.
 sudo pacman -S ghostscript
+
+
+<img src="2025-03-15_22-54.png"\>
+
 ## 🌟 Features
 
 - **Automated Project Tracking**

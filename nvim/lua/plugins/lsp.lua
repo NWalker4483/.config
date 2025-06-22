@@ -1,4 +1,13 @@
-return { -- Completion engine
+return { 
+  
+  {
+  "jglasovic/venv-lsp.nvim",
+  config = function()
+    require("venv-lsp").setup()
+  end,
+},
+  
+  -- Completion engine
 {
     "hrsh7th/nvim-cmp",
     dependencies = {"hrsh7th/cmp-nvim-lsp", -- LSP source

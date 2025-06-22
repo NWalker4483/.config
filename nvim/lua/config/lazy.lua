@@ -20,7 +20,15 @@ vim.opt.rtp:prepend(lazypath)
 -- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+vim.opt.number = true
+vim.opt.relativenumber = true
 
+-- Ctrl+S to save
+vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
+vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>a', { noremap = true, silent = true })
+
+-- Ctrl+W to close buffer/window
+vim.keymap.set('n', '<C-w>', ':q<CR>', { noremap = true, silent = true })
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {

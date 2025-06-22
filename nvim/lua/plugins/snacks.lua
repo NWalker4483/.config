@@ -36,7 +36,9 @@ return { -- Snacks.nvim - Collection of QoL plugins
         image = {
             enabled = true
         },
-        scroll = {
+        scope= {
+            enabled = true
+        },scroll = {
             enabled = true
         },
         statuscolumn = {

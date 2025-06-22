@@ -60,15 +60,16 @@ return { -- CSV Viewing with auto-enable
     {
         "<leader>cv",
         "<cmd>CsvViewToggle<cr>",
-        desc = "Toggle CSV View"
+        desc = "Toggle CSV View",
+        ft = { "csv", "tsv" }
     }, {
         "<leader>ce",
         "<cmd>CsvViewEnable<cr>",
-        desc = "Enable CSV View"
+        desc = "Enable CSV View",ft = { "csv", "tsv" }
     }, {
         "<leader>cd",
         "<cmd>CsvViewDisable<cr>",
-        desc = "Disable CSV View"
+        desc = "Disable CSV View",ft = { "csv", "tsv" }
     }},
     cmd = {"CsvViewEnable", "CsvViewDisable", "CsvViewToggle"}
 }, -- Modern Markdown Previewer (separate plugin)
