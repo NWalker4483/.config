@@ -17,18 +17,16 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+
+-- Basic Vim options
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- Ctrl+S to save
-vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
-vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>a', { noremap = true, silent = true })
+-- Load general keybindings (non-plugin specific)
+require("config.keybindings")
 
--- Ctrl+W to close buffer/window
-vim.keymap.set('n', '<C-w>', ':q<CR>', { noremap = true, silent = true })
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
